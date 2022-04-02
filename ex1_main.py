@@ -29,9 +29,10 @@ def quantDemo(img_path: str, rep: int):
     img = imReadAndConvert(img_path, rep)
     st = time.time()
 
-    img_lst, err_lst = quantizeImage(img, 3, 20)
+    img_lst, err_lst = quantizeImage(img, 20, 5)
 
     print("Time:%.2f" % (time.time() - st))
+    
     print("Error 0:\t %f" % err_lst[0])
     print("Error last:\t %f" % err_lst[-1])
 
@@ -74,7 +75,8 @@ def main():
 
 
 if __name__ == '__main__':
+    gammaDisplay('beach.jpg', LOAD_GRAY_SCALE)
     #main()
-    histEqDemo("hist_img.png",1)
-    histEqDemo("hist_img.png",2)
-    #histEqDemo("dark.jpg",2)
+    
+    
+  
